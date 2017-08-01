@@ -1,0 +1,73 @@
+{
+  "name": "angular2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "@angular/animations": "^4.2.4",
+    "@angular/common": "^4.2.4",
+    "@angular/compiler": "^4.2.4",
+    "@angular/core": "^4.2.4",
+    "@angular/http": "^4.2.4",
+    "@angular/platform-browser": "^4.2.4",
+    "@angular/platform-browser-dynamic": "^4.2.4",
+    "@angular/platform-server": "^4.2.4",
+    "@angular/router": "^4.2.5",
+    "@angularclass/bootloader": "^1.0.1",
+    "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.26",
+    "@ngtools/webpack": "^1.5.5",
+    "@nguniversal/aspnetcore-engine": "^1.0.0-beta.2",
+    "@ngx-universal/express-engine": "^0.4.0-beta.1",
+    "@ngx-universal/state-transfer": "^0.4.0-beta.1",
+    "ajv": "^5.2.2",
+    "angular2-template-loader": "^0.6.2",
+    "aspnet-prerendering": "^3.0.1",
+    "compression": "^1.6.2",
+    "concurrently": "^3.5.0",
+    "ejs": "^2.5.6",
+    "express": "^4.15.3",
+    "express-ejs-layouts": "^2.3.0",
+    "history-events": "^1.0.4",
+    "html-loader": "^0.4.5",
+    "html-webpack-plugin": "^2.29.0",
+    "net": "^1.0.2",
+    "nodemon": "^1.11.0",
+    "raw-loader": "^0.5.1",
+    "reflect-metadata": "^0.1.10",
+    "rxjs": "^5.4.1",
+    "webpack-merge": "^4.1.0",
+    "zone.js": "^0.8.12"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^4.3.2",
+    "@angular/forms": "^4.3.2",
+    "copy-webpack-plugin": "^4.0.1",
+    "ejs-loader": "^0.3.0",
+    "loader-utils": "^1.0.4",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "ts-loader": "^2.2.1",
+    "typescript": "^2.2.0",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "2"
+  },
+  "scripts": {
+    "server": "concurrently \"nodemon dist/server.js\" \"npm run watch-server\"",
+    "build-server": "webpack --env.server",
+    "watch-server": "webpack -w --env.server",
+    "client": "webpack-dev-server --env.client",
+    "build-client": "webpack --env.client",
+    "watch-client": "webpack -w --env.client",
+    "build": "concurrently \"npm run build-server\" \"npm run build-client\"",
+    "start": "concurrently \"npm run server\" \"npm run watch-client\" ",
+    "build-aot": "concurrently \"webpack --env.client --env.aot\" \"webpack --env.server --env.aot\""
+  },
+  "esformatter": {
+    "indent": {
+      "value": "    "
+    }
+  },
+  "author": "",
+  "license": "ISC"
+}
